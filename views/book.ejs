@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+<h2>Book Store</h2>
+<h4>Book Info</h4>
+<div>
+  <h5> <%= book.title %> </h5>
+  <blockquote>
+    <p> <%= book.description %></p>
+    <cite>- <%= book.price %>$</cite>
+  </blockquote>
+  <div class="menu-bar">
+    <a class="menu-item" href="/<%= book._id %>/detail?view=author">Author</a>
+    <a class="menu-item" href="/<%= book._id %>/detail?view=review">Review</a>
+  </div>
+  <% if (book.author.name) { %>
+    <h6> <%= book.author.name %> </h6>
+    <h6> Age: <%= book.author.age %> </h6>
+    <h6> Bio </h6>
+    <p><%= book.author.bio %></p>
+  <% } %>
+  <% if (book.review.reviewer) { %>
+    <h6> <%= book.review.reviewer %> </h6>
+    <h6> Rating: <%= book.review.rating %> </h6>
+    <h6> Comment </h6>
+    <p><%= book.review.comment %></p>
+  <% } %>
+</div>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,12 @@
+.menu-bar {
+    display: flex;
+    flex-direction: row;
+}
+.menu-item {
+    cursor: pointer;
+    text-align: center;
+    flex-grow: 1;
+    background-color: #f1f1f1;
+    padding: 0.5em 0;
+    font-weight: 600;
+}

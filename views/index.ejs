@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %> 
+  <h2>Book Store</h2>
+  <h4>All Books</h4>
+  <% if (Array.isArray(books)) { %>
+    <% books.forEach(book => {  %>
+      <div>
+        <h5> <%= book.title %> </h5>
+        <blockquote>
+          <p> <%= book.description %></p>
+          <cite>— <%= book.author.name %></cite>
+          <cite>- <%= book.price %>$</cite>
+          <a href="/<%= book._id %>/detail">- More details</a>
+        </blockquote>
+      </div>
+    <%  }); %>
+  <% } %>
+<%- include("partials/footer.ejs") %> 
